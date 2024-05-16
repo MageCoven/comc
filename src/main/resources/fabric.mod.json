@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "comc",
+	"version": "${version}",
+	"name": "COMC",
+	"description": "A minimal configuration handler for Coven mods that uses TOML files.",
+	"authors": [
+		"MageCoven"
+	],
+	"contact": {
+		"sources": "https://github.com/MageCoven/comc"
+	},
+	"license": "Apache-2.0",
+	"icon": "assets/comc/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.magecoven.COMC"
+		],
+		"client": [
+			"com.magecoven.COMCClient"
+		]
+	},
+	"mixins": [
+		"comc.mixins.json",
+		{
+			"config": "comc.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {}
+}
